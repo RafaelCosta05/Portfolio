@@ -214,7 +214,11 @@ nav{
         -webkit-background-clip: text;
         background-position: 0 0;
         animation: homeBgText 6s linear infinite;
+<<<<<<< HEAD
         animation-delay: 1.1s;
+=======
+        animation-delay: 2s;
+>>>>>>> aec20d888dbbac9c787dbdd9b3969c45672c5f3c
    }
 
    .home-content .text-animation h3::before {
@@ -900,4 +904,7 @@ ABOUT
         background-position: 0 0;
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> aec20d888dbbac9c787dbdd9b3969c45672c5f3c
