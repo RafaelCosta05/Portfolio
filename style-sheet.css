@@ -851,6 +851,10 @@ ABOUT
         font-size: 5.2rem;
     }
 
+    .home-content h1 span {
+        margin-top: 4rem;
+    }
+
     .education {
         padding: 10rem 4% 5rem 5%;
     }
