@@ -742,6 +742,7 @@ ABOUT
 
     .theme-toggler {
         position: relative;
+        left: 30%;
     }
 }
 
