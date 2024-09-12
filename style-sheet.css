@@ -734,6 +734,7 @@ ABOUT
 
     .navbar {
         position: absolute;
+        align-items: center;
         top: 100%;
         left: -140%;
         width: 100%;
