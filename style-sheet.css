@@ -728,28 +728,6 @@ ABOUT
         padding: 2rem 4%;
     }
 
-    section {
-        padding: 10rem 4% 2rem;
-    }
-
-    .home {
-        padding: 0 4%;
-    }
-
-    .footer {
-        padding: 2rem 4%;
-    }
-
-    .theme-toggler {
-        position: relative;
-    }
-}
-
-@media (max-width: 768px) {
-    .header {
-        background: var(--color-background);
-    }
-
     #menu-icon{
         display: block;
     }
@@ -777,13 +755,32 @@ ABOUT
         font-size: 2rem;
         margin: 3rem 0;
     }
-}
 
+    section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .home {
+        padding: 0 4%;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+
+    .theme-toggler {
+        position: relative;
+    }
+}
+/* 768 */
+@media (max-width: 768px) {
+    .header {
+        background: var(--color-background);
+    }
+}
 
 @media (max-width: 390px) {
     .navbar {
         height: 100%;
     }
 }
-
-
