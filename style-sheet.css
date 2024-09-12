@@ -738,16 +738,35 @@ ABOUT
         left: -140%;
         width: 100%;
         padding: 1rem 4%;
-        background: var(--color-background);
+        background: var(--color-success);
         box-shadow: var(--box-shadow);
         transition: .25s ease;
         transition-delay: .25s;
     }
     
     .navbar.active {
-        transition-delay: .25s;
+        transition-delay: 0;
         left: -40%;
         right: inherit;
+    }
+
+    /* novo */
+    .navbar .active-nav {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--color-background);
+        border-top: .1rem solid var(--color-background);
+        z-index: -1;
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active .active-nav {
+        transition-delay: .25s;
+        left: 0;
     }
 
     .navbar a {
@@ -772,7 +791,7 @@ ABOUT
         position: relative;
     }
 }
-/* 768 */
+
 @media (max-width: 768px) {
     .header {
         background: var(--color-background);
