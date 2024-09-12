@@ -209,6 +209,23 @@ nav{
         font-weight: 700;
         color: transparent;
         -webkit-text-stroke: .7px var(--color-success);
+        background-image: linear-gradient(var(--color-success), var(--color-success));
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+        background-position: 0 0;
+        animation: homeBgText 6s linear infinite;
+        /* animation-delay: 2s; */
+   }
+
+   .home-content .text-animation h3::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        border-right: 2px solid var(--color-success);
+        z-index: -1;
    }
 
    .home-content p {
@@ -734,6 +751,7 @@ ABOUT
 
     .navbar {
         position: absolute;
+        align-items: center;
         top: 100%;
         left: -140%;
         width: 100%;
@@ -773,6 +791,14 @@ ABOUT
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
+        transform: translateX(-20rem);
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active a {
+        transform: translateX(0);
+        transition-delay: .25s;
     }
 
     section {
@@ -798,8 +824,80 @@ ABOUT
     }
 }
 
+@media(max-width: 520px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home-content h1 {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .home-content h1 span {
+        display: block; /* Força a quebra de linha */
+        margin-top: 0.5rem; /* Espaço entre as linhas, ajuste conforme necessário */
+    }
+}
+
+@media(max-width: 462px) {
+    .home-content h1 {
+        font-size: 5.2rem;
+    }
+
+    .education {
+        padding: 10rem 4% 5rem 5%;
+    }
+
+    .contact form .input-box .input-field {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 371px) {
+    .home {
+        justify-content: center;
+    }
+
+    .home-content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+}
+
 @media (max-width: 390px) {
     .navbar {
         height: 100%;
+    }
+}
+
+/* KEYFRAMES ANIMATION */
+@keyframes homeBgText {
+    0%,
+    10%,
+    100% {
+        background-position: -33rem 0;
+    }
+
+    65%,
+    85%, {
+        background-position: 0 0;
     }
 }
