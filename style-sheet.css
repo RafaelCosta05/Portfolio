@@ -36,13 +36,13 @@
 * {
     margin: 0;
     padding: 0;
-    outline: none;
-    appearance: none;
-    border: none;
-    text-decoration: none;
     box-sizing: border-box;
-    scroll-behavior: smooth;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth !important;
     font-family: 'Poppins', sans-serif;
+    appearance: none;
 }
 
 html {
@@ -51,12 +51,7 @@ html {
 }
 
 body {
-    /* width: 100vw;
-    height: 100vh; */
-    font-size: 0.88rem;
     background: var(--color-background);
-    /* user-select: none;
-    overflow-x: hidden; */
     color: var(--color-dark);
 }
 
@@ -126,12 +121,6 @@ body {
     background: var(--color-background);
 }
 
-header.shadow {
-    background: var(--color-background);
-    transition: 0.4s;
-    box-shadow: var(--box-shadow);
-}
-
 nav{
     display: flex;
     align-items: flex-end;
@@ -153,6 +142,10 @@ nav{
 /* =============================
    OPTIONS
    ============================= */
+
+   .navbar {
+    position: absolute;
+   }
 
    .navbar a {
         font-size: 1.7rem;
@@ -201,49 +194,6 @@ nav{
         width: 100%;
         height: 666px;
         box-shadow: var(--box-shadow);
-        transition: all ease 300ms;
-   }
-   /* =============================
-   CARD ANIMATION
-   ============================= */
-
-/* @property --angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
-@keyframes spin {
-    from {
-        --angle: 0deg;
-    }
-
-    to {
-        --angle: 360deg;
-    }
-} */
-
-    /* .img-box .img-home::before {
-        filter: blur(1.5rem);
-        opacity: 0.5;
-    }
-
-   .img-box .img-home::after{
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background: conic-gradient(from var(--angle), transparent 70%, var(--color-success));
-        top: 50%;
-        left: 50%;
-        translate: -50% -50%;
-        z-index: -1;
-        padding: 4px;
-        animation: 3s spin linear infinite;
-   } */
-
-   .img-box img:hover {
-        opacity: .8;
         transition: all ease 300ms;
    }
 
@@ -416,8 +366,8 @@ ABOUT
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border-top: .2rem solid var(--color-background);
-    border-bottom: .2rem solid var(--color-background);
+    border-top: .2rem solid var(--color-second-background);
+    border-bottom: .2rem solid var(--color-second-background);
     border-left: .2rem solid var(--color-success);
     border-right: .2rem solid var(--color-success);
 }
@@ -752,3 +702,65 @@ ABOUT
 .footer-iconTop a:hover i {
     color: var(--color-success);
 }
+
+
+/* BREAKPOINTS */
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 4%;
+    }
+
+    section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .home {
+        padding: 0 4%;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        background: var(--color-background);
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--color-background);
+        box-shadow: var(--box-shadow);
+        transition: .25s ease;
+        transition-delay: .25s;
+    }
+    
+    .navbar.active {
+        transition-delay: .25s;
+        left: 0;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+}
+
+
