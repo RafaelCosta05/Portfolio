@@ -73,6 +73,7 @@ body {
         cursor: pointer;
         border-radius: var(--border-radius-2);
         margin-left: 4rem;
+        z-index: 0;
     }
 
         .theme-toggler span {
@@ -144,7 +145,8 @@ nav{
    ============================= */
 
    .navbar {
-    position: absolute;
+        position: static;
+        z-index: 1;
    }
 
    .navbar a {
@@ -705,10 +707,19 @@ ABOUT
 
 
 /* BREAKPOINTS */
+@media(min-width: 1201px) {
+    .theme-toggler {
+        margin-left: 2rem;
+    }
+}
 
 @media (max-width: 1200px) {
     html {
         font-size: 55%;
+    }
+
+    .theme-toggler {
+        position: relative;
     }
 }
 
@@ -728,6 +739,10 @@ ABOUT
     .footer {
         padding: 2rem 4%;
     }
+
+    .theme-toggler {
+        position: relative;
+    }
 }
 
 @media (max-width: 768px) {
@@ -742,7 +757,7 @@ ABOUT
     .navbar {
         position: absolute;
         top: 100%;
-        left: -100%;
+        left: -140%;
         width: 100%;
         padding: 1rem 4%;
         background: var(--color-background);
@@ -753,13 +768,21 @@ ABOUT
     
     .navbar.active {
         transition-delay: .25s;
-        left: 0;
+        left: -40%;
+        right: inherit;
     }
 
     .navbar a {
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
+    }
+}
+
+
+@media (max-width: 390px) {
+    .navbar {
+        height: 100%;
     }
 }
 

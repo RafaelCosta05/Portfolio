@@ -7,10 +7,6 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active');
 }
 
-document.getElementById('menu-icon').onclick = function() {
-    document.querySelector('.navbar').classList.toggle('show');
-}
-
 
 //Theme dark or light
 const themeToggler = document.querySelector('.theme-toggler');
@@ -68,14 +64,4 @@ window.onscroll = () => {
     let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 100);
 }
-
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector(link.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
 
