@@ -212,13 +212,12 @@ nav{
         background-image: linear-gradient(var(--color-success), var(--color-success));
         background-repeat: no-repeat;
         -webkit-background-clip: text;
-        background-position: 0 0;
+        background-position: -99rem 0;
         animation: homeBgText 6s linear infinite;
         animation-delay: 1.1s;
-        animation-delay: 2s;
    }
 
-   .home-content .text-animation h3::before {
+   /* .home-content .text-animation h3::before {
         content: '';
         position: absolute;
         top: 0;
@@ -227,7 +226,9 @@ nav{
         height: 100%;
         border-right: 2px solid var(--color-success);
         z-index: -1;
-   }
+        animation: homeCursorText 6s linear infinite;
+        animation-delay: 2s;
+   } */
 
    .home-content p {
         font-size: 1.6rem;
@@ -390,6 +391,7 @@ ABOUT
     border-bottom: .2rem solid var(--color-second-background);
     border-left: .2rem solid var(--color-success);
     border-right: .2rem solid var(--color-success);
+    animation: aboutSpinner 8s linear infinite;
 }
 
 .about-content {
@@ -916,13 +918,39 @@ ABOUT
 
 /* KEYFRAMES ANIMATION */
 @keyframes homeBgText {
-    0% {
-        background-position: 0 0;
-    }
-    50% {
+    0%,
+    10%,
+    100% {
         background-position: -99rem 0;
     }
+
+    65%,
+    85% {
+        background-position: 0 0;     
+    }
+}
+
+@keyframes homeCursorText {
+    0%,
+    10%,
     100% {
-        background-position: 0 0;
+        width: 0;
+    }
+
+    65%,
+    78%,
+    85% {
+        width: 54%;
+        opacity: 1;
+    }
+    75%,
+    81% {
+        opacity: 0;
+    }
+}
+
+@keyframes aboutSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
