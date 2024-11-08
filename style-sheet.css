@@ -373,9 +373,11 @@ ABOUT
 }
 
 .about-img img {
-    width: 90%;
+    width: 100%;
     border-radius: 50%;
     border: .2rem solid var(--color-success);
+    height: 100%;
+    object-fit: cover;
 }
 
 .about-img .circle-spin {
